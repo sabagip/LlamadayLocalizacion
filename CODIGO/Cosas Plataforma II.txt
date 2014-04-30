@@ -1,0 +1,43 @@
+Dentro de manifest agregar permiso
+<user-permission
+android:name="android.permission.CALL_PHONE">
+</user-permission>
+Shared num
+public void Idioma (View v){
+	try{
+		Intent intent = new Intent(Intent.ACTION.CALL);
+		intent.setData(Uri.parse("tel:x"));
+		startActivity(intent);
+	}catch(Exception e){
+		Toast.makeText(this,"no puedes llamar",Toast.LENGTH.SHORT).show();
+	}
+crear archivos JSON con numero propios
+
+String coordenada = "28.708,-106.1047";
+String nombre = "Tec";
+public void localizar(View v){
+	String uri = "geo:" + coordenada + "?q=" + coordenada + "(" + nombre + ")";
+	Intent intent = new Intent(Intent.ACTION-VIEW);
+	intent.setData(Uri.parse(uri));
+	if(intent.resolveActivity(getPackageManager())!=null){
+		startActivity(intent);
+	}
+}
+buscar en genymotion googlemaps apk
+
+JSON
+json obj
+{"k":"v"}
+[{},{}]
+JSONARRAY
+{"k":[{"k","v"},{"k":"v"}]}
+
+PHP
+<?php
+	$actividades = array();
+	while(datos){
+		array.push($actividades, array("actividad"=>data[i],"hora"=>datos));
+	}
+	$resultado = json.encode($actividades);
+	echo $resultado;
+?>
