@@ -30,7 +30,7 @@ public class Localizar extends Activity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_localizar);
 
         mLocationClient = new LocationClient(this, this, this);
     }
@@ -50,7 +50,7 @@ public class Localizar extends Activity implements
         super.onStop();
     }
 
-   /* public void obtenerPosicion(View v){
+    public void obtenerPosicion(View v){
         if (servicesConnected())
             Toast.makeText(this, "Connectado", Toast.LENGTH_SHORT).show();
         else
@@ -65,24 +65,10 @@ public class Localizar extends Activity implements
             mLocationClient.connect();
         }
     }
-*/
+
     @Override
     public void onConnected(Bundle bundle) {
-        //Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
-
-        if (servicesConnected())
-            Toast.makeText(this, "Connectado", Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(this, "No Connectado", Toast.LENGTH_SHORT).show();
-
-        if (mLocationClient.isConnected()) {
-            mCurrentLocation = mLocationClient.getLastLocation();
-            TextView coordenada;
-            coordenada = (TextView) findViewById(R.id.lblCoordenada);
-            coordenada.setText(mCurrentLocation.getLatitude() + "," + mCurrentLocation.getLongitude());
-        }else{
-            mLocationClient.connect();
-        }
+        Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
 
     }
 
